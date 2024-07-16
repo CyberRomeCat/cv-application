@@ -21,6 +21,11 @@ form {
   justify-self: center;
 }
 
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-details {
   display: flex;
   justify-content: space-around;
