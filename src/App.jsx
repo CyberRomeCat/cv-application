@@ -193,6 +193,7 @@ export default function RenderCVMaker() {
             <h1>Personal Details</h1>
                <form className="register-personal-details">
                     <Input label={'name'} text={text.name} handleChange={ handleChange }/>
+                    <Input label={'occupation'} text={text.occupation}  type={'occupation'} handleChange={ handleChange }/>
                     <Input label={'number'} text={text.number}  type={'number'} handleChange={ handleChange }/>
                     <Input label={'email'} text={text.email} type={'email'} handleChange={ handleChange }/>
                     <Input label={'address'} text={text.address}  type={'address'} handleChange={ handleChange }/>
@@ -238,40 +239,49 @@ export default function RenderCVMaker() {
                               ))
                             }
                         </div>
-                    }
+                 }
                     <button onClick={() => setIsSent({ ...isSent, expForm: true })}>Add Experience</button>
                </div>
             </div>
+            
             <div className="cv">
-                <div className="personal-details">
-                    {isSent.name && <p>{text.name}</p>}
-                    {isSent.number && <p>{text.number}</p>}
-                    {isSent.email && <p>{text.email}</p>}
-                    {isSent.address && <p>{text.address}</p>}
-                </div>
-                {isSent.registerEdu && 
-                <>
-                    {values.education.map((value, index) => (                    
-                        <div key={index}>
-                            <p>{value.schoolName}</p>
-                            <p>{value.study}</p>
-                            <p>{value.start}</p>
-                            <p>{value.end}</p>
-                        </div>        
-                ))}   
-                </>}
-                {isSent.registerExp && 
-                <>
-                    {values.experience.map((value, index) => (               
-                        <div key={index}>
-                            <p>{value.companyName}</p>
-                            <p>{value.positionTitle}</p>
-                            <p>{value.tasks}</p>
-                            <p>{value.start}</p>
-                            <p>{value.end}</p>
-                        </div>        
-                ))}   
-                </>}
+                <header className="header">
+                    {isSent.name && <p className="name">{text.name}</p>}
+                    {isSent.occupation && <p className="occupation">{text.occupation}</p>}
+                </header>
+                <body>
+                    <div className="personal-details">
+                        {isSent.number && <p>{text.number}</p>}
+                        {isSent.email && <p>{text.email}</p>}
+                        {isSent.address && <p>{text.address}</p>}
+                    </div>
+                    <div className="more-details">
+                        {isSent.registerEdu && 
+                         <div className="educational-details">
+                            {values.education.map((value, index) => (                    
+                                <div key={index}>
+                                    <p>{value.schoolName}</p>
+                                    <p>{value.study}</p>
+                                    <p>{value.start}</p>
+                                    <p>{value.end}</p>
+                                </div>        
+                        ))}   
+                        </div>}
+                        {isSent.registerExp && 
+                            <div className="experience-details">
+                                {values.experience.map((value, index) => (               
+                                    <div key={index}>
+                                        <p>{value.companyName}</p>
+                                        <p>{value.positionTitle}</p>
+                                        <p>{value.tasks}</p>
+                                        <p>{value.start}</p>
+                                        <p>{value.end}</p>
+                                    </div>        
+                            ))}
+                            </div>}
+                    </div>
+                </body>
+                
             </div>
         </div>
     )

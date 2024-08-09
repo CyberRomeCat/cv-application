@@ -20,3 +20,33 @@
   width: 100%;
   padding: 3rem;
 }
+
+.header {
+  background-color: #243E51;
+  color: white;
+  padding: 2rem;
+  padding-left: 3.5rem;
+}
+
+.personal-details {
+  background-color: #243E51;
+  height: 10rem;
+  color: white;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 1rem;
+}
+
+.occupation {
+  font-size: 1.5rem;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
