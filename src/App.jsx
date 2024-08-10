@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import phoneSVG from './assets/phone.svg'
+import mailSVG from './assets/mail.svg'
+import addressSVG from './assets/address.svg'
 
 const formatLabel = (label) => {
     return label
@@ -249,38 +252,60 @@ export default function RenderCVMaker() {
                     {isSent.name && <p className="name">{text.name}</p>}
                     {isSent.occupation && <p className="occupation">{text.occupation}</p>}
                 </header>
-                <body>
+                <div className="content">
                     <div className="personal-details">
-                        {isSent.number && <p>{text.number}</p>}
-                        {isSent.email && <p>{text.email}</p>}
-                        {isSent.address && <p>{text.address}</p>}
+                        <h1 className="font-semibold text-xl pb-4">Personal Details:</h1>
+                        {isSent.number && <div>
+                            <img src={ phoneSVG }/>
+                            <p>{text.number}</p> 
+                        </div>}
+                        {isSent.email && <div>
+                            <img src={ mailSVG }/>
+                            <p>{text.email}</p> 
+                        </div>}
+                        {isSent.address && <div>
+                            <img src={ addressSVG }/>
+                            <p>{text.address}</p> 
+                        </div>}
                     </div>
-                    <div className="more-details">
+                    <div className="more-details" >
+                        <h1>Education</h1>
+                        <div className="line"></div>
                         {isSent.registerEdu && 
-                         <div className="educational-details">
+                         <>
                             {values.education.map((value, index) => (                    
-                                <div key={index}>
-                                    <p>{value.schoolName}</p>
-                                    <p>{value.study}</p>
-                                    <p>{value.start}</p>
-                                    <p>{value.end}</p>
+                                <div className="educational-details" key={index}>
+                                    <div>
+                                        <h1 className="title">{value.schoolName}</h1>
+                                        <h2 className="sub-title">{value.study}</h2>
+                                    </div>
+                                    <div className="education-date"> 
+                                        <h2>{value.start}-{value.end}</h2>
+                                    </div>
                                 </div>        
                         ))}   
-                        </div>}
+                        </>}
+                        <h1>Experience</h1>
+                        <div className="line"></div>
                         {isSent.registerExp && 
-                            <div className="experience-details">
+                            <>
                                 {values.experience.map((value, index) => (               
-                                    <div key={index}>
-                                        <p>{value.companyName}</p>
-                                        <p>{value.positionTitle}</p>
-                                        <p>{value.tasks}</p>
-                                        <p>{value.start}</p>
-                                        <p>{value.end}</p>
+                                    <div className="experience-details" key={index}>
+                                        <div>
+                                            <div>
+                                                <h1 className="title">{value.companyName}</h1>
+                                                <h2 className="sub-title">{value.positionTitle}</h2>
+                                            </div>
+                                            <div>
+                                                <h2>{value.start}-{value.end}</h2>
+                                            </div>
+                                        </div>                                        
+                                        <p className="tasks">{value.tasks}</p>
                                     </div>        
                             ))}
-                            </div>}
+                            </>}
                     </div>
-                </body>
+                </div>
                 
             </div>
         </div>

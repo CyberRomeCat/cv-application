@@ -16,37 +16,75 @@
 
 .register-form,
 .cv {
-  background-color: whitesmoke;
   width: 100%;
-  padding: 3rem;
+  height: 90%;
+  padding: 1rem;
+}
+
+.register-form, .more-details {
+  background-color: whitesmoke;
 }
 
 .header {
   background-color: #243E51;
   color: white;
-  padding: 2rem;
-  padding-left: 3.5rem;
+  height:9rem;
+  padding: 1rem;
+  padding-left: 2.5rem;
 }
 
 .personal-details {
-  background-color: #243E51;
-  height: 10rem;
-  color: white;
+  background-color: #86afcb;
+  padding: 2rem;
 }
 
-body {
+.content {
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: 0.4fr 1fr;
+  height: 100%;
+  padding-bottom: 2rem;
 }
 
 .name {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 1rem;
 }
 
 .occupation {
-  font-size: 1.5rem;
   font-style: italic;
   letter-spacing: 2px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight:lighter;
+}
+
+.sub-title {
+  font-style: italic;
+}
+
+.sub-title, .tasks {
+  padding-left: 1rem;
+}
+
+.more-details {
+  padding: 2rem;
+}
+
+.educational-details, .experience-details > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.more-details > h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.line {
+  height: 2px;
+  background-color: black;
 }
 
