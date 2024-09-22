@@ -26,6 +26,12 @@
   background-color: whitesmoke;
 }
 
+.resume-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .header {
   background-color: #243E51;
   color: white;
@@ -79,6 +85,11 @@
   align-items: center;
 }
 
+.register-personal-details {
+  display: flex;
+  flex-direction: column;
+}
+
 .more-details > h1 {
   font-size: 2rem;
   font-weight: bold;
@@ -88,4 +99,23 @@
   height: 2px;
   background-color: black;
 }
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-input {
+  position: absolute;
+  left: 0;
+  top: calc(100% + .25rem);
+  background-color: white;
+  padding: .75rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+}
+
+.none {
+  display: none;
+}
+
 
