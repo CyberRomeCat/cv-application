@@ -10,7 +10,7 @@ export default function RenderCVMaker() {
             number:'', 
             address:'', 
     }
-        
+    
     const [isSent, setIsSent] = useState({inputValue: false});
     const [text, setText] = useState(InitialDetails);
     const [education, setEducation] = useState({});
@@ -24,9 +24,9 @@ export default function RenderCVMaker() {
 
     const handleChangeFormEdu = (e, field) => {
         const values = isSent.inputValue;
-            setEducation({ ...education, [values]:  {
-                ...education[values], [field]: e.target.value 
-            }});
+        setEducation({ ...education, [values]:  {
+            ...education[values], [field]: e.target.value 
+        }});
     }
 
     const handleChangeFormExp = (e, field) => {
@@ -58,6 +58,7 @@ export default function RenderCVMaker() {
 
     const submitExp = () => {
         const values = isSent.inputValue;
+        console.log(values);
         if(!values) {
             setExperience({ ...experience, [index.experience]: {
                 companyName: document.getElementById('companyName').value,
@@ -68,7 +69,7 @@ export default function RenderCVMaker() {
             } });
             setIndex({...index, experience: index.experience + 1});
         } else {
-            setExperience({ ...education, [values]: {
+            setExperience({ ...experience, [values]: {
                 companyName: document.getElementById('companyName').value,
                 positionTitle: document.getElementById('positionTitle').value,
                 tasks: document.getElementById('tasks').value,

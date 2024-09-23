@@ -1,16 +1,15 @@
 import Input from "./input";
 
-const expForm = (isSent, setIsSent, experience, submitExp, handleChange) => {
+const expForm = (isSent, setIsSent, experience, handleChange, submitExp) => {
     return (
         <form onSubmit={
             (e) => {
                 e.preventDefault();
-                submitExp();      
+                submitExp();
                 setIsSent({ ...isSent, registerExp: true, expForm: false});
-            
             }
-        } className="register-education-ex">
-                {isSent.inputValue !== false ? 
+        } className="register-experience-ex">
+                {isSent.inputValue !== false && Object.keys(experience).length > 0 ? 
                 <>
                     <Input label={'companyName'} text={experience[isSent.inputValue].companyName} handleChange={ handleChange } />
                     <Input label={'positionTitle'} text={experience[isSent.inputValue].positionTitle}  handleChange={ handleChange }/>
@@ -28,14 +27,13 @@ const expForm = (isSent, setIsSent, experience, submitExp, handleChange) => {
                  }
                 <button type="submit">submit</button>
                 <button onClick={() => {       
-                            setIsSent({ ...isSent, registerExp: true, expForm: false, inputValue: false});                                        
+                            setIsSent({ ...isSent, expForm: false, inputValue: false});                                        
                         }}>
                     cancel
                 </button>
          </form>
     )
 }
-
 
 const eduForm = (isSent,setIsSent,education, handleChange, submitEdu) => {
     return (
@@ -46,7 +44,7 @@ const eduForm = (isSent,setIsSent,education, handleChange, submitEdu) => {
                 setIsSent({ ...isSent, registerEdu: true, eduForm: false});
             }
         } className="register-education-ex">
-                {isSent.inputValue !== false && Object.keys(education).length > 0 ? 
+                {isSent.inputValue !== false && Object.keys(education).length > 0? 
                 <>
                     <Input label={'schoolName'} text={education[isSent.inputValue].schoolName} handleChange={ handleChange } />
                     <Input label={'study'} text={education[isSent.inputValue].study}  handleChange={ handleChange }/>

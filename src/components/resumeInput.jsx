@@ -70,12 +70,12 @@ function ResumeInput({text, handleChange, isSent, education,experience, setIsSen
            <div className="dropdown">
                 <button className="link" onClick={onButtonClick('experience')}>Experience</button>
                 <div className={dropDown.experience == true ? 'dropdown-input' : 'none'}>
-                    {isSent.expForm && expForm(isSent, setIsSent, experience, submitExp, handleChangeExp)}
+                    {isSent.expForm && expForm(isSent, setIsSent, experience,handleChangeExp,submitExp)}
                     {RenderButtons(isSent,setIsSent, experience, handleChangeExp, submitExp, deleteValues, 'experience')}
-                    <button onClick={() => setIsSent({ ...isSent, expForm: true })}>Add Experience</button>
+                    <button onClick={() => setIsSent({ ...isSent, expForm: true})}>Add Experience</button>
                 </div>
            </div>
-        </div>        
+        </div>      
     )
 }
 
