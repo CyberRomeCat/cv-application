@@ -44,8 +44,12 @@ function ResumeInput({text, handleChange, isSent, education,experience, setIsSen
             setDropDown({...dropDown, education: true});
         }else if(field === 'experience' && dropDown.experience != true){
             setDropDown({...dropDown, experience: true});
-        } else {
-            setDropDown({...dropDown, personal: false, education: false, experience: false});
+        }else if(field === 'personal' && dropDown.personal == true){
+            setDropDown({...dropDown, personal: false});
+        }else if(field === 'education' && dropDown.education == true){
+            setDropDown({...dropDown, education: false});
+        }else if(field === 'experience' && dropDown.experience == true){
+            setDropDown({...dropDown, experience: false});
         }
     }
 
