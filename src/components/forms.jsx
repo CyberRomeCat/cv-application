@@ -7,6 +7,8 @@ const expForm = (isSent, setIsSent, experience, handleChange, submitExp) => {
                 e.preventDefault();
                 submitExp();
                 setIsSent({ ...isSent, registerExp: true, expForm: false});
+                document.getElementById('addExperience').style.display = 'block'  
+                document.getElementById('fieldButtonsExp').style.display = 'block'  
             }
         } className="register-experience-ex">
                 {isSent.inputValue !== false && Object.keys(experience).length > 0 ? 
@@ -27,7 +29,9 @@ const expForm = (isSent, setIsSent, experience, handleChange, submitExp) => {
                  }
                 <button type="submit">submit</button>
                 <button onClick={() => {       
-                            setIsSent({ ...isSent, expForm: false, inputValue: false});                                        
+                            setIsSent({ ...isSent, expForm: false, inputValue: false});        
+                            document.getElementById('addExperience').style.display = 'block';
+                            document.getElementById('fieldButtonsExp').style.display = 'block'                                 
                         }}>
                     cancel
                 </button>
@@ -42,6 +46,8 @@ const eduForm = (isSent,setIsSent,education, handleChange, submitEdu) => {
                 e.preventDefault();
                 submitEdu();
                 setIsSent({ ...isSent, registerEdu: true, eduForm: false});
+                document.getElementById('addEducation').style.display = 'block';
+                document.getElementById('fieldButtonsEdu').style.display = 'block';
             }
         } className="register-education-ex">
                 {isSent.inputValue !== false && Object.keys(education).length > 0? 
@@ -61,6 +67,8 @@ const eduForm = (isSent,setIsSent,education, handleChange, submitEdu) => {
                 <button type="submit">submit</button>
                 <button onClick={() => {
                         setIsSent({ ...isSent, eduForm: false, inputValue: false})
+                        document.getElementById('addEducation').style.display = 'block';
+                        document.getElementById('fieldButtonsEdu').style.display = 'block';
                     }}>cancel</button>
          </form>
     )
