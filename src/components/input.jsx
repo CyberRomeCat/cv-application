@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 const formatLabel = (label) => {
     return label
         .replace(/([A-Z])/g, ' $1') // Add space before capital letters
@@ -27,3 +26,4 @@ function Input({ label, type = 'text', text, handleChange}) {
 }
 
 export default Input
+

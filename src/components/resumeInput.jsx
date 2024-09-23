@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import Input from "./input";
 import { eduForm, expForm } from "./forms";
 import { useState } from "react";

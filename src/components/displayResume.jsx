@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import phoneSVG from '../assets/phone.svg'
 import mailSVG from '../assets/mail.svg'
 import addressSVG from '../assets/address.svg'

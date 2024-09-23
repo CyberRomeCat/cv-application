@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import ResumeInput from "./components/resumeInput.jsx";
 import DisplayResume from "./components/displayResume.jsx";
@@ -97,16 +96,17 @@ export default function RenderCVMaker() {
 
     return (
         <div className="parent-container">
-            <ResumeInput 
+            <ResumeInput
                 text={text} 
                 handleChange={handleChange} 
-                isSent={isSent} education={education} 
+                isSent={isSent} 
+                education={education} 
                 experience={experience} 
                 setIsSent={setIsSent} 
                 deleteValues={deleteValues} 
                 handleChangeEdu={handleChangeFormEdu} 
                 submitEdu={submitEdu} 
-                submitExp={submitExp} 
+                submitExp={submitExp}
                 handleChangeExp={handleChangeFormExp}
             />       
             <DisplayResume
