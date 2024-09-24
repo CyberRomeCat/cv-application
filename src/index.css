@@ -2,40 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  display: flex;
+  background-color:whitesmoke;
+}
+
+#root {
+  padding: 2rem;
+  width: 100vw;
+  height: 110vh;
+}
+
+.dropdown {
+  background: white;
+  font-size: 2em;
+  font-weight: bolder;
+  border: solid none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 1vw;
+  padding: 1rem;
+}
+
+.dropdown-input {
+  font-size: medium;
+  font-weight: 300;
+  transition: 1s ease-out 0.25s;
+  animation: slide-in 0.10s  ease-in;
+}
+
+.none {
+  display: none;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  height: 100vh;
-  width: 100vw;
 }
 
 .parent-container {
   display: grid;
+  gap: 1em;
   grid-template-columns: 0.8fr 1fr;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+}
+
+.resume-input {
+  width: 100%;
+  height: 100%;
 }
 
 .resume-input,
+.more-details,
 .display-resume {
-  width: 100%;
-  height: 90%;
-  padding: 1rem;
+  background-color: whitesmoke;
 }
 
-.resume-input, .more-details {
-  background-color: whitesmoke;
+.display-resume {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
 }
 
 .resume-input {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content:flex-start;
+  gap: 1em;
 }
 
 .header {
   background-color: #243E51;
   color: white;
-  height:9rem;
   padding: 1rem;
   padding-left: 2.5rem;
 }
@@ -48,18 +95,17 @@
 .content {
   display: grid;
   grid-template-columns: 0.4fr 1fr;
-  height: 100%;
-  padding-bottom: 2rem;
 }
 
 .name {
-  font-size: 3rem;
+  font-size: 4.5rem;
   font-weight: 1rem;
 }
 
 .occupation {
   font-style: italic;
   letter-spacing: 2px;
+  font-size: 1.7rem;
 }
 
 .title {
@@ -85,9 +131,27 @@
   align-items: center;
 }
 
-.register-personal-details {
+.register-personal-details,
+.register-education,
+.register-experience{
   display: flex;
   flex-direction: column;
+  font-size: large;
+  gap:10px;
+}
+
+#addEducation,
+#addExperience {
+  text-align: center;
+  font-size: 1.5rem;
+  width: 100%;
+  border: solid black;
+}
+
+input {
+  border: whitesmoke solid;
+  border-radius: 0.5vw;
+  width: 100%;
 }
 
 .more-details > h1 {
@@ -105,7 +169,6 @@
 }
 
 .dropdown-input {
-  position: absolute;
   left: 0;
   top: calc(100% + .25rem);
   background-color: white;
@@ -114,8 +177,40 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
 }
 
-.none {
-  display: none;
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 3px;
 }
 
+.buttons > button {
+  border: #243E51 solid;
+  width: 100%;
+  border-radius: 0.5vw;
+  border-color: black;
+  border-width: 1px;
+}
+
+#fieldButtonsEdu,
+#fieldButtonsExp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 0.5rem;
+}
+
+#fieldButtonsEdu > button,
+#fieldButtonsExp > button {
+  display: flex;
+  justify-content: space-between;
+  border: #86afcb solid;
+  border-radius: 0.5vw;
+  border-width: 3px;
+  width: 100%;
+  height: 2em;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:#243e51;
+  padding: 0.2em 1em 0 1em;
+}
 

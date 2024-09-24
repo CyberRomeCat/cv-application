@@ -8,9 +8,9 @@ const expForm = (isSent, setIsSent, experience, handleChange, submitExp) => {
                 submitExp();
                 setIsSent({ ...isSent, registerExp: true, expForm: false});
                 document.getElementById('addExperience').style.display = 'block'  
-                document.getElementById('fieldButtonsExp').style.display = 'block'  
+                document.getElementById('fieldButtonsExp').style.display = 'flex'  
             }
-        } className="register-experience-ex">
+        } className="register-experience">
                 {isSent.inputValue !== false && Object.keys(experience).length > 0 ? 
                 <>
                     <Input label={'companyName'} text={experience[isSent.inputValue].companyName} handleChange={ handleChange } />
@@ -27,14 +27,16 @@ const expForm = (isSent, setIsSent, experience, handleChange, submitExp) => {
                     <Input label={'end'}/>
                 </>
                  }
-                <button type="submit">submit</button>
-                <button onClick={() => {       
-                            setIsSent({ ...isSent, expForm: false, inputValue: false});        
-                            document.getElementById('addExperience').style.display = 'block';
-                            document.getElementById('fieldButtonsExp').style.display = 'block'                                 
-                        }}>
-                    cancel
-                </button>
+                 <div className="buttons">
+                    <button type="submit">submit</button>
+                    <button onClick={() => {       
+                                setIsSent({ ...isSent, expForm: false, inputValue: false});        
+                                document.getElementById('addExperience').style.display = 'block';
+                                document.getElementById('fieldButtonsExp').style.display = 'flex';                                 
+                            }}>
+                        cancel
+                    </button>
+                 </div>
          </form>
     )
 }
@@ -47,9 +49,9 @@ const eduForm = (isSent,setIsSent,education, handleChange, submitEdu) => {
                 submitEdu();
                 setIsSent({ ...isSent, registerEdu: true, eduForm: false});
                 document.getElementById('addEducation').style.display = 'block';
-                document.getElementById('fieldButtonsEdu').style.display = 'block';
+                document.getElementById('fieldButtonsEdu').style.display = 'flex';
             }
-        } className="register-education-ex">
+        } className="register-education">
                 {isSent.inputValue !== false && Object.keys(education).length > 0? 
                 <>
                     <Input label={'schoolName'} text={education[isSent.inputValue].schoolName} handleChange={ handleChange } />
@@ -64,12 +66,15 @@ const eduForm = (isSent,setIsSent,education, handleChange, submitEdu) => {
                     <Input label={'end'} />
                 </>
                  }
-                <button type="submit">submit</button>
-                <button onClick={() => {
-                        setIsSent({ ...isSent, eduForm: false, inputValue: false})
-                        document.getElementById('addEducation').style.display = 'block';
-                        document.getElementById('fieldButtonsEdu').style.display = 'block';
-                    }}>cancel</button>
+                <div className="buttons">
+                    <button type="submit">submit</button>
+                    <button onClick={() => {
+                            setIsSent({ ...isSent, eduForm: false, inputValue: false})
+                            document.getElementById('addEducation').style.display = 'block';
+                            document.getElementById('fieldButtonsEdu').style.display = 'flex';
+                        }}>cancel
+                    </button>
+                </div> 
          </form>
     )
 }

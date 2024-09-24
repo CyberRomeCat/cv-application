@@ -5,10 +5,10 @@ import addressSVG from '../assets/address.svg'
 export default function DisplayResume({isSent,text, values}) {
     return( 
         <div className="display-resume">
-            <header className="header">
+            <div className="header">
                 {isSent.name && <p className="name">{text.name}</p>}
                 {isSent.occupation && <p className="occupation">{text.occupation}</p>}
-            </header>
+            </div>
             <div className="content">
                 <div className="personal-details">
                     <h1 className="font-semibold text-xl pb-4">Personal Details:</h1>

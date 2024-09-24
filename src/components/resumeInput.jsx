@@ -1,6 +1,7 @@
 import Input from "./input";
 import { eduForm, expForm } from "./forms";
 import { useState } from "react";
+import trashSVG from '../assets/trash.svg'
 
 function RenderButtons(isSent,setIsSent, field, handleChange, submit,deleteValues, string) {
     return (
@@ -25,7 +26,7 @@ function RenderButtons(isSent,setIsSent, field, handleChange, submit,deleteValue
                     <div onClick={(e) => {
                         e.stopPropagation();
                         deleteValues(key, string)
-                        }}>Trash</div>
+                        }}><img src={trashSVG}/></div>
                     </button>
                 ))
                 }
