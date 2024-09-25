@@ -214,3 +214,8 @@ input {
   padding: 0.2em 1em 0 1em;
 }
 
+.link {
+  display: flex;
+  gap: 20px;
+}
+

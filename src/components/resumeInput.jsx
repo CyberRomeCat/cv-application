@@ -1,7 +1,10 @@
 import Input from "./input";
 import { eduForm, expForm } from "./forms";
 import { useState } from "react";
-import trashSVG from '../assets/trash.svg'
+import trashSVG from '../assets/trash.svg';
+import personalSVG from '../assets/personal.svg';
+import educationSVG from '../assets/education.svg'
+import workSVG from '../assets/work.svg'
 
 function RenderButtons(isSent,setIsSent, field, handleChange, submit,deleteValues, string) {
     return (
@@ -69,7 +72,7 @@ function ResumeInput({text, handleChange, isSent, education,experience, setIsSen
     return (
         <div className="resume-input">
             <div className="dropdown">
-                <button className="link" onClick={onButtonClick('personal')}>Personal Details</button>
+                <button className="link" onClick={onButtonClick('personal')}><img src={personalSVG}/>Personal Details</button>
                 <div className={dropDown.personal == true ? 'dropdown-input' : 'none'}>
                     <form className="register-personal-details">
                         <Input label={'name'} text={text.name} handleChange={ handleChange }/>
@@ -81,7 +84,7 @@ function ResumeInput({text, handleChange, isSent, education,experience, setIsSen
                 </div>
             </div> 
            <div className="dropdown">
-                <button className="link" onClick={onButtonClick('education')}>Education</button>
+                <button className="link" onClick={onButtonClick('education')}><img src={educationSVG}/>Education</button>
                 <div className={dropDown.education == true ? 'dropdown-input' : 'none'}>
                     {isSent.eduForm && eduForm(isSent,setIsSent, education, handleChangeEdu, submitEdu)}
                     <div id="fieldButtonsEdu">
@@ -91,7 +94,7 @@ function ResumeInput({text, handleChange, isSent, education,experience, setIsSen
                 </div>
            </div>
            <div className="dropdown">
-                <button className="link" onClick={onButtonClick('experience')}>Experience</button>
+                <button className="link" onClick={onButtonClick('experience')}><img src={workSVG}/>Experience</button>
                 <div className={dropDown.experience == true ? 'dropdown-input' : 'none'}>
                     {isSent.expForm && expForm(isSent, setIsSent, experience,handleChangeExp,submitExp)}
                     <div id="fieldButtonsExp">
